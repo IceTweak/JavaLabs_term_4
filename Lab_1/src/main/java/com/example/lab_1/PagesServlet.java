@@ -13,51 +13,30 @@ public class PagesServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String action = request.getParameter("action");
+        String pagePath = null;
 
         if (action == null || action.equalsIgnoreCase("home")) {
-            doGet_Index(request, response);
+            pagePath = "index.jsp";
         } else {
             if (action.equalsIgnoreCase("about")) {
-                doGet_About(request, response);
+                pagePath = "pages/about.jsp";
             } else if (action.equalsIgnoreCase("contact")) {
-                doGet_Contact(request, response);
+                pagePath = "pages/contact.jsp";
             } else if (action.equalsIgnoreCase("pricing")) {
-                doGet_Pricing(request, response);
+                pagePath = "pages/pricing.jsp";
             } else if (action.equalsIgnoreCase("portfolioAll")) {
-                doGet_PortfolioAll(request, response);
+                pagePath = "pages/portfolioAll.jsp";
             } else if (action.equalsIgnoreCase("portfolioItem")) {
-                doGet_PortfolioItem(request, response);
+                pagePath = "pages/portfolioItem.jsp";
             }
         }
+        doGetPages(request, response, pagePath);
 
     }
 
-    public void doGet_Index(HttpServletRequest request, HttpServletResponse response)
+    public void doGetPages(HttpServletRequest request, HttpServletResponse response, String path)
             throws ServletException, IOException {
-        request.getRequestDispatcher("index.jsp").forward(request, response);
-    }
-
-    public void doGet_About(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        request.getRequestDispatcher("pages/about.jsp").forward(request, response);
-    }
-
-    public void doGet_Contact(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        request.getRequestDispatcher("pages/contact.jsp").forward(request, response);
-    }
-
-    protected void doGet_Pricing(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        request.getRequestDispatcher("pages/pricing.jsp").forward(request, response);
-    }
-    public void doGet_PortfolioAll(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        request.getRequestDispatcher("pages/portfolioAll.jsp").forward(request, response);
-    }
-    public void doGet_PortfolioItem(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        request.getRequestDispatcher("pages/portfolioItem.jsp").forward(request, response);
+        request.getRequestDispatcher(path).forward(request, response);
     }
 
     public void destroy() {
