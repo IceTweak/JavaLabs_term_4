@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+body{
+    height: 100vh;
+    min-height: 100vh;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background: rgb(8, 128, 75);
+    background: linear-gradient(45deg, rgb(21, 217, 210), rgb(12, 97, 164));
+}
+.wrap{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+h1{
+    text-align: center;
+    margin: 30px;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 40px;
+    letter-spacing: -0.025em;
+}
+.container{
+    display: flex;
+
+    flex-direction: column;
+    padding: 30px;
+    margin: 0 auto;
+    width: 600px;
+    height: 700px;
+    background-color: #1F2937;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+#formHeader{
+    margin-bottom: 40px;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(45deg, rgb(21, 217, 148), rgb(8, 128, 75));
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.025em;
+
+}
+.input-div{
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-family: 'Karla', sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: -0.025em;
+}
+.input{
+    height: 50px;
+    width: 300px;
+    text-align: center;
+    background-color: #273549;
+    color: #34D399;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Karla', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+}
+#pages{
+    width: 100px;
+}
+#date{
+    width: 200px;
+}
+#submit{
+    text-align: center;
+    margin-top: 30px;
+    width: 300px;
+    height: 60px;
+    padding: 3px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(45deg, rgb(21, 217, 148), rgb(8, 128, 75));
+    font-family: 'Karla', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 28px;
+    color: #ffffff;
+    cursor: pointer;
+}
