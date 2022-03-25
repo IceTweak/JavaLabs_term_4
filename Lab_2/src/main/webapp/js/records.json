@@ -1,16 +1,1 @@
-[
-  {
-  "bookName": "ABCDE",
-  "author": "R.V.Savoshchik",
-  "pages": "450",
-  "publishDate": "12-05-2021",
-  "publisher": "Constants Inc"
-},
-{
-  "bookName": "Rosemary",
-  "author": "B.Cleesh",
-  "pages": "732",
-  "publishDate": "22-01-2005",
-  "publisher": "Rebellion Publish"
-}
-  ]
+[{"pages":"58","author":"D.Daniel","publishDate":"2022-03-02","publisher":"Letter Pub.","bookName":"MoonStars"},{"pages":"385","author":"W.K.Nikolsen","publishDate":"1983-11-10","publisher":"Post Inc.","bookName":"Soul Trade"}]

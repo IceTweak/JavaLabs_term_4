@@ -4,10 +4,11 @@
 <html>
 <head>
     <title>Lab 2 OOP</title>
+    <meta http-equiv="Cache-Control" content="no-cache" />
     <link rel="stylesheet" href="css/style.css" type="text/css"/>
 </head>
 <body>
-<div class="wrap">
+<div class="wrap" id="wrap">
     <h1>JSON Lab 2</h1>
     <div class="container">
         <p id="formHeader">Заполните форму <br>для добавления запси</p>
@@ -24,7 +25,7 @@
 
             <div class="input-div">
                 <label for="pages">Количество страниц</label>
-                <input type="number" step="10" value="10" min="10" id="pages" class="input" name="pages" required>
+                <input type="number" step="1" value="10" min="10" id="pages" class="input" name="pages" required>
             </div>
 
             <div class="input-div">
@@ -40,6 +41,10 @@
 
             <button id="submit" type="submit">Отправить</button>
         </form>
+
+    </div>
+    <div class="btn-container">
+        <button id="getData">Получить данные</button>
     </div>
 </div>
 <script src="js/index.js" type="text/javascript"></script>

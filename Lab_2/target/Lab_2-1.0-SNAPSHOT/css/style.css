@@ -2,10 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
 
 body{
-    height: 100vh;
+    width: 100%;
     min-height: 100vh;
     margin: 0;
-    background-repeat: no-repeat;
     background-attachment: fixed;
     background: rgb(8, 128, 75);
     background: linear-gradient(45deg, rgb(21, 217, 210), rgb(12, 97, 164));
@@ -17,7 +16,6 @@ body{
     text-align: center;
     width: 100%;
     height: auto;
-    overflow: hidden;
 }
 
 h1{
@@ -102,4 +100,52 @@ h1{
     line-height: 28px;
     color: #ffffff;
     cursor: pointer;
+}
+.btn-container{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 600px;
+    height: auto;
+}
+#getData{
+    text-align: center;
+    margin-top: 30px;
+    width: 300px;
+    height: 60px;
+    padding: 5px;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Karla', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 28px;
+    color: #ffffff;
+    cursor: pointer;
+    background: linear-gradient(45deg, rgb(46, 97, 236), rgb(90, 65, 250));
+}
+#data-div{
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    flex-direction: column;
+    width: 600px;
+    height: auto;
+    background-color: #1F2937;
+    border-radius: 20px;
+
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: #34D399;
+}
+.line{
+    height: 6px;
+    width: inherit;
+    background-color: #273549;
+    border: none;
+    border-radius: 2px;
 }
