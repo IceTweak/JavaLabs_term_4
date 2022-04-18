@@ -1,38 +1,45 @@
 package com.lab_2.lab_2;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.stream.JsonReader;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.apache.commons.io.IOUtils;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
-
-import org.apache.commons.io.IOUtils;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
-import org.json.simple.parser.ParseException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 @WebServlet(name = "jsonServlet", value = "/jsonServlet")
 public class jsonServlet extends HttpServlet {
-    private final String pathFile = "E:\\Java_labs\\JavaLabs_term_4\\Lab_2\\src\\main\\webapp\\js\\records.json";
-
-    public static String readFileAsString(String file) throws Exception
-    {
-        return new String(Files.readAllBytes(Paths.get(file)));
-    }
+    private final String pathFile = "F:\\Политех учеба\\ИВТ-Программирование\\Java ООП\\Java_term_4\\Lab_2\\src\\main\\webapp\\js\\records.json";
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
 
-        try {
-            String json = readFileAsString(pathFile);
+        try(JsonReader reader = new JsonReader(new FileReader(pathFile))) {
+
+            Gson gson = new GsonBuilder().create();
+            // Получаем список объектов из файла
+            List<Book> books = gson.fromJson(reader, new TypeToken<List<Book>>() {}.getType());
+
+            // Переворачиваем чтобы новые записи были сверху
+            Collections.reverse(books);
+
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
             PrintWriter out = response.getWriter();
-            out.print(json);
+
+            // Сериализуем в JSON и отправляем
+            out.print(gson.toJson(books));
             out.flush();
             out.close();
         } catch (Exception e) {
@@ -43,32 +50,41 @@ public class jsonServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) {
 
-        try{
+        try(JsonReader reader = new JsonReader(new FileReader(pathFile)))
+        {
             File file = new File(pathFile);
             if(!file.exists()){
                 Files.createFile(Path.of(pathFile));
             }
-            FileReader reader = new FileReader(pathFile);
 
             String input = IOUtils.toString(request.getInputStream(), StandardCharsets.UTF_8); // входящая строка
-            JSONParser parser = new JSONParser();
-            JSONObject jsonLine = (JSONObject) parser.parse(input);
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
-            if(file.length() == 0){
-                JSONArray jsonArray = new JSONArray();
-                jsonArray.add(jsonLine);
+            // дессериализация JSON строки
+            Book inputBook = gson.fromJson(input, Book.class);
+
+            if(file.length() == 0) {
+                // Создаем список для записей
+                List<Book> books = new ArrayList<>();
+
+                // Добавление POJO в список
+                books.add(inputBook);
+
                 FileWriter writer = new FileWriter(pathFile);
-                writer.write(jsonArray.toJSONString());
-                writer.close(); reader.close();
+                writer.write(gson.toJson(books));
+                writer.close();
             }else{
-                JSONArray jsonArray;
-                jsonArray = (JSONArray) parser.parse(reader);
-                jsonArray.add(jsonLine);
+                // Читаем jsonArray в список POJO
+                List<Book> books = gson.fromJson(reader, new TypeToken<List<Book>>() {}.getType());
+
+                books.add(inputBook);
+
                 FileWriter writer = new FileWriter(pathFile);
-                writer.write(jsonArray.toJSONString());
-                writer.flush(); reader.close(); writer.close();
+                writer.write(gson.toJson(books));
+                writer.close();
             }
-        }catch (IOException | ParseException e){
+
+        }catch (IOException e){
             e.printStackTrace();
         }
     }

@@ -1,1 +1,23 @@
-[{"pages":"345","author":"Р.Киплинг","publishDate":"1786-03-12","publisher":"Даммерстон","bookName":"Книга Джунглей"},{"pages":"266","author":"А.С. Пушкин","publishDate":"1879-12-03","publisher":"Неизвестно","bookName":"Сказки"}]
+[
+  {
+    "bookName": "MoonStars",
+    "author": "D.Daniel",
+    "pages": "678",
+    "publishDate": "2022-04-18",
+    "publisher": "Lingua"
+  },
+  {
+    "bookName": "Soul Trade",
+    "author": "W.K.Nikolsen",
+    "pages": "567",
+    "publishDate": "2022-04-02",
+    "publisher": "Letter Pub."
+  },
+  {
+    "bookName": "Book of Light",
+    "author": "A. R. Tompson",
+    "pages": "409",
+    "publishDate": "2008-02-06",
+    "publisher": "Emmer ACL"
+  }
+]
