@@ -1,5 +1,3 @@
-
-
 let loadBtn = document.getElementById('getData')
 loadBtn.addEventListener('click', loadData, false);
 
@@ -55,7 +53,7 @@ form.onsubmit = function(event) {
     let data = new FormData(form);
     let toServer = JSON.stringify(Object.fromEntries(data.entries()));
     xhr.open('POST', 'jsonServlet', true);
-    xhr.setRequestHeader("Content-Type", "application/jx-www-form-urlencoded");
+    xhr.setRequestHeader("Content-Type", "application/jx-www-form-urlencoded; charset=utf8");
     xhr.send(toServer);
 
     xhr.onreadystatechange = function () {
@@ -63,6 +61,4 @@ form.onsubmit = function(event) {
             form.reset(); //reset form after AJAX success or do something else
         }
     }
-    //Fail the onsubmit to avoid page refresh.
-    //return false;
 }

@@ -17,6 +17,7 @@ import org.json.simple.parser.ParseException;
 
 @WebServlet(name = "jsonServlet", value = "/jsonServlet")
 public class jsonServlet extends HttpServlet {
+    private final String pathFile = "E:\\Java_labs\\JavaLabs_term_4\\Lab_2\\src\\main\\webapp\\js\\records.json";
 
     public static String readFileAsString(String file) throws Exception
     {
@@ -25,8 +26,6 @@ public class jsonServlet extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
-
-        String pathFile = "F:\\Политех учеба\\ИВТ-Программирование\\Java ООП\\Java_term_4\\Lab_2\\src\\main\\webapp\\js\\records.json";
 
         try {
             String json = readFileAsString(pathFile);
@@ -43,8 +42,6 @@ public class jsonServlet extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) {
-
-        String pathFile = "F:\\Политех учеба\\ИВТ-Программирование\\Java ООП\\Java_term_4\\Lab_2\\src\\main\\webapp\\js\\records.json";
 
         try{
             File file = new File(pathFile);
