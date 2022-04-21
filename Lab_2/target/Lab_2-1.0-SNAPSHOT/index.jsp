@@ -3,13 +3,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lab 2 OOP</title>
+    <title>Lab 3 OOP</title>
     <meta http-equiv="Cache-Control" content="no-cache" />
     <link rel="stylesheet" href="css/style.css" type="text/css"/>
 </head>
 <body>
 <div class="wrap" id="wrap">
-    <h1>JSON Lab 2</h1>
+    <h1>JSON Lab 3</h1>
     <div class="container">
         <p id="formHeader">Заполните форму <br>для добавления запси</p>
         <form>

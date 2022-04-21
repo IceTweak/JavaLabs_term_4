@@ -20,7 +20,7 @@ import java.util.List;
 
 @WebServlet(name = "jsonServlet", value = "/jsonServlet")
 public class jsonServlet extends HttpServlet {
-    private final String pathFile = "F:\\Политех учеба\\ИВТ-Программирование\\Java ООП\\Java_term_4\\Lab_2\\src\\main\\webapp\\js\\records.json";
+    private final String pathFile = "F:\\Политех учеба\\ИВТ-Программирование\\Java ООП\\Java_term_4\\Lab_2\\src\\main\\webapp\\js\\records.txt";
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
