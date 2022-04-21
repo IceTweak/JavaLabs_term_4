@@ -41,6 +41,19 @@ public class Book {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return """
+{
+"Название книги": "%s",
+"Автор": "%s",
+"Дата публикации": "%s",
+"Издатель": "%s",
+"Страницы": "%s"
+}
+""".formatted(bookName, author, publishDate, publisher, pages);
+    }
+
 
     public String bookName() {
         return bookName;
