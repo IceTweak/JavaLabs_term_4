@@ -38,8 +38,8 @@ function showData(records) {
     records.forEach(function(record){
         for(let line in record){
             dataDiv.innerHTML += '<div style="font-size:26px;color:white;font-weight:600;display: inline-block;">' +
-                line + ': ' + '<span style="font-size:24px; color: #34D399; font-weight:500;">'
-                + record[line] + '</span>' +'</div>' + '<br>';
+                line + ': ' + '<span style="font-size:24px; color: #34D399; ' +
+                'font-weight:500;">' + record[line] + '</span>' +'</div>' + '<br>';
         }
         dataDiv.innerHTML += '<hr class="line">';
     });

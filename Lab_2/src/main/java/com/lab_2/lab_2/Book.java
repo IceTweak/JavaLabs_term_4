@@ -55,28 +55,44 @@ public class Book {
     }
 
 
-    public String bookName() {
+    public String getBookName() {
         return bookName;
     }
 
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
+    }
 
-    public String author() {
+    public String getAuthor() {
         return author;
     }
 
-
-    public String date() {
-        return publishDate;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
-
-    public String pages() {
+    public String getPages() {
         return pages;
     }
 
+    public void setPages(String pages) {
+        this.pages = pages;
+    }
 
-    public String publisher() {
+    public String getPublishDate() {
+        return publishDate;
+    }
+
+    public void setPublishDate(String publishDate) {
+        this.publishDate = publishDate;
+    }
+
+    public String getPublisher() {
         return publisher;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
     }
 
 }
